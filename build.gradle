@@ -26,9 +26,21 @@ dependencies {
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
+
+    compile 'com.amazonaws:aws-lambda-java-core:1.2.0'
+
+    compile 'com.amazonaws:aws-lambda-java-events:2.2.6'
+
+    compile 'com.amazonaws:aws-java-sdk:1.11.588'
+
+    compile 'com.amazonaws:aws-java-sdk-dynamodb:1.11.585'
+
+
 }
 
 application {
     // Define the main class for the application
     mainClassName = 'sqs.clients.App'
 }
+sourceCompatibility = 1.8
+targetCompatibility = 1.8

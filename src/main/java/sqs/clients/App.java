@@ -4,11 +4,25 @@
 package sqs.clients;
 
 public class App {
-    public String getGreeting() {
-        return "Hello world.";
+    public static void iInvokeNightCourt(){
+        Pub aPub = new Pub(System.getenv("URL_A"));
+        Pub bPub = new Pub(System.getenv("URL_B"));
+        Pub cPub = new Pub(System.getenv("URL_C"));
+
+        for( int i = 0; i < 15; i ++){
+            aPub.publish("Message for a: " + i);
+            bPub.publish("Message for b: " + i);
+            cPub.publish("Message for c: " + i);
+        }
+
     }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        iInvokeNightCourt();
+        iInvokeNightCourt();
+        iInvokeNightCourt();
+        iInvokeNightCourt();
     }
+
+
 }
